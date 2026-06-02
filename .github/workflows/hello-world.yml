@@ -1,16 +1,18 @@
 name: CI
-on: push
+
+on:
+  push:  
 
 jobs:
-    build:
-        runs-on: ubuntu-latest
+  build:
+    runs-on: ubuntu-latest
 
-        steps:
-            - uses: actions/checkout@v6
-            - name: set up python 3.11
-              uses: actions/setup-python@v6
-              with:
-                    python-version: '3.13' 
-            - run: python my_script.py
-            - name: install dependancy
-              run: pip install -r requirements.txt
+    steps:
+    - name: Set up Python 3.11
+      uses: actions/setup-python@v5
+      with:
+        python-version: 3.11
+
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt
