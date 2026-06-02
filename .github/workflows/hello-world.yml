@@ -12,6 +12,5 @@ jobs:
       - uses: actions/setup-python@v6
         with:
           python-version: '3.13' 
-      - run: python my_script.py
       - name: Check weather 
         run: python --version
